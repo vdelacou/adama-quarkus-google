@@ -38,6 +38,8 @@ jobs:
 
       - name: Red Hat Dependency Analytics Scan
         uses: RHEcosystemAppEng/rhda-github-action@main
+        with:
+          manifest_directory: roslin-adama-api
 
       - name: Report build results
         uses: gmazzo/publish-report-annotations@v1
@@ -45,5 +47,5 @@ jobs:
         with:
           reports: | 
             roslin-adama-api/target/*.xml
-             roslin-adama-api/target/surefire-reports/*.xml
+            roslin-adama-api/target/surefire-reports/*.xml
 
