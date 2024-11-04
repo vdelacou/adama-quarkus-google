@@ -116,6 +116,8 @@
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
+                    <outputFileFormat>xml</outputFileFormat>
+                    <outputFile>target/checkstyle-result.xml</outputFile>
                 </configuration>
                 <executions>
                     <execution>
