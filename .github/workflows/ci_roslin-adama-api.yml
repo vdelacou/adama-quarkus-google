@@ -1,4 +1,4 @@
-name: CI Roslin Adama API
+name: Security Roslin Adama API
 
 on:
   push:
@@ -44,12 +44,6 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Build and analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=vdelacou_adama-quarkus-google
-
       - name: Report build results
         uses: gmazzo/publish-report-annotations@v1
         if: ${{ !cancelled() }}
@@ -57,4 +51,11 @@ jobs:
           reports: | 
             roslin-adama-api/target/*.xml
             roslin-adama-api/target/surefire-reports/*.xml
+            roslin-adama-api/target/site/jacoco/*.xml
+
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=vdelacou_adama-quarkus-google
 
