@@ -36,8 +36,9 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Upload Checkstyle report
-        uses: actions/upload-artifact@v4
+      - name: Publish Checkstyle report
+        uses: Juuxel/publish-checkstyle-report@v1
+        if: ${{ failure() || success() }}
         with:
-          name: checkstyle-report
-          path: roslin-adama-api/target/checkstyle-result.xml
+          reports: |
+            oslin-adama-api/target/*.xml
