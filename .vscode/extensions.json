@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "vscjava.vscode-java-pack",
+        "redhat.vscode-quarkus",
+        "redhat.java",
+        "shengchen.vscode-checkstyle",
+        "eamodio.gitlens",
+        "sonarsource.sonarlint-vscode",
+        "snyk-security.snyk-vulnerability-scanner",
+        "github.vscode-github-actions",
+        "redhat.vscode-xml"
+    ]
+}
