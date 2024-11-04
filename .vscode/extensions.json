@@ -6,7 +6,7 @@
         "shengchen.vscode-checkstyle",
         "eamodio.gitlens",
         "sonarsource.sonarlint-vscode",
-        "snyk-security.snyk-vulnerability-scanner",
+        "redhat.fabric8-analytics",
         "github.vscode-github-actions",
         "redhat.vscode-xml"
     ]
