@@ -35,10 +35,14 @@ jobs:
               
       - name: Build with Maven
         run: mvn clean install
+    
+      - uses: jwgmeligmeyling/checkstyle-github-action@master
+        with:
+          path: 'roslin-adama-api/target/checkstyle-result.xml'
 
       - name: Publish Checkstyle report
         uses: Juuxel/publish-checkstyle-report@v1
         if: ${{ failure() || success() }}
         with:
           reports: |
-            oslin-adama-api/target/*.xml
+            roslin-adama-api/target/*.xml
